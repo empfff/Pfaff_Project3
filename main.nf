@@ -1,13 +1,19 @@
 #! /usr/bin/env nextflow
 
 process count_collabs {
-    container 'mbiggs/r_ebimage'
-
-    output:
-    file '*.csv' into csv_out
+    container 'epfaff/abstractanalysis'
 
     script:
     """
     Rscript $baseDir/bin/CollabCounter.R
+    """
+}
+
+process count_words {
+    container 'epfaff/abstractanalysis'
+
+    script:
+    """
+    Rscript $baseDir/bin/WordCounter.R
     """
 }
