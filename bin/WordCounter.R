@@ -1,6 +1,6 @@
 library(tm)
-#ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-files <- dir("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/data", pattern = "\\.txt$", full.names = TRUE)
+
+files <- dir("data", pattern = "\\.txt$", full.names = TRUE)
 
 #write a function to subset the abstracts to just those that mention one of the collaborating cities, one city at a time
 subsetbycity <- function(thecity) {
@@ -62,8 +62,7 @@ subsetbycity <- function(thecity) {
   terms<-head(d, 20)
   
   #write output to file
-  #ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-  mypath <- paste("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_",thecity,".csv",sep="") #this doesn't work right now
+  mypath <- paste("data/wordCounts_",thecity,".csv",sep="") 
   write.csv(terms,mypath)
 }
 subsetbycity("Boston")

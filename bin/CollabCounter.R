@@ -3,11 +3,8 @@ library(stringr)
 library(plyr)
 library(dplyr)
 
-#Note to grader: I purposely did not use the pipe in several places in this script to help with troubleshooting individual steps.
-
 #read in the concat abstract file
-#ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-abstracts <- read_lines("C:/Users/epfaff/Documents/TempDocs/allAbstracts.txt")
+abstracts <- read_lines("data/all/allAbstracts.txt")
 
 #subset the abstracts to just those that specifically mention UNC in Author information (not all do)
 uncAbstracts <- str_subset(abstracts, "Author information.{0,10000}Chapel Hill")
@@ -65,5 +62,5 @@ collabCountsTib <- collabCountsTib %>%
 
 #write output to file
 #ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-write.csv(collabCountsTib,"C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/collabCounts.csv")
+write.csv(collabCountsTib,"data/collabCounts.csv")
 
