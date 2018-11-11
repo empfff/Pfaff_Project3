@@ -24,7 +24,7 @@ process count_words {
 
     script:
     """
-    Rscript $baseDir/bin/WordCounter.R $baseDir/data
+    Rscript $baseDir/bin/WordCounter.R $baseDir/data/
     """
 }
 
