@@ -1,7 +1,7 @@
 #! /usr/bin/env nextflow
 
 process count_collabs {
-    container 'epfaff/abstractanalysis'
+    container 'empfff/abstractanalysis'
 
     script:
     """
@@ -10,7 +10,7 @@ process count_collabs {
 }
 
 process count_words {
-    container 'epfaff/abstractanalysis'
+    container 'empfff/abstractanalysis'
 
     script:
     """
