@@ -61,7 +61,6 @@ collabCountsTib <- collabCountsTib %>%
   arrange(desc(V1)) %>%
   top_n(10)
 
-# #write output to file
-# #ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-# write.csv(collabCountsTib,"data/collabCounts.csv")
+#write output to file
+write.csv(collabCountsTib,"data/collabCounts.csv")
 
