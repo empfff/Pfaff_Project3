@@ -19,4 +19,18 @@ process count_collabs {
     """
 }
 
+process count_words {
+    container 'empfff/abstractanalysis'
+
+    output:
+    file '*.csv' into csv_out2
+
+    script:
+    """
+    Rscript $baseDir/bin/WordCounter.R $baseDir/data
+    """
+}
+
 csv_out.subscribe { it.copyTo(myDir) }
+csv_out2.subscribe { it.copyTo(myDir) }
+
