@@ -10,17 +10,12 @@ process count_collabs {
     input:
     file i from in_abstracts
 
+    output:
+    file '*.csv' into csv_out
+
     script:
     """
     Rscript $baseDir/bin/CollabCounter.R
     """
 }
 
-process count_words {
-    container 'empfff/abstractanalysis'
-
-    script:
-    """
-    Rscript $baseDir/bin/WordCounter.R
-    """
-}

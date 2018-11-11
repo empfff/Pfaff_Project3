@@ -62,6 +62,7 @@ collabCountsTib <- collabCountsTib %>%
   top_n(10)
 
 #write output to file
-#ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
-write.csv(collabCountsTib,"data/collabCounts.csv")
+fileConn = file("collabCounts.csv")
+writeLines(args[1],fileConn)
+close(fileConn)
 
