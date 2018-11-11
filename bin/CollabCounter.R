@@ -22,11 +22,9 @@ uniquecitystates <- vector("list",length(citystates))
 for(i in 1:length(citystates)) {
   uniquecitystates[i] <- map(citystates[i],unique)
 }
-uniquecitystates
 
 #Convert list of lists into a vector to make it easier to work with
 allCollabs <- unlist(uniquecitystates)
-allCollabs
 
 #Replace all whitespaces with nothing to normalize city/state names
 nospaces <- str_trim(allCollabs)
@@ -60,8 +58,12 @@ collabCounts <- ddply(df,.(cleaned),nrow)
 collabCountsTib <- as.tibble(collabCounts)
 
 #Sort descending on number of collaborations
-collabCountsTib %>%
+collabCountsTib <- collabCountsTib %>%
   filter(cleaned != "ChapelHill,NC") %>%
   arrange(desc(V1)) %>%
-  top_n(50)
+  top_n(10)
+
+#write output to file
+#ACTION: SWITCH TO GENERIC PATH AND DELETE THIS COMMENT
+write.csv(collabCountsTib,"C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/collabCounts.csv")
 
