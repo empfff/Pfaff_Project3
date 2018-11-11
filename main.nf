@@ -12,7 +12,7 @@ process count_collabs {
 
     script:
     """
-    Rscript $baseDir/bin/CollabCounter.R
+    Rscript $baseDir/bin/CollabCounter.R $i
     """
 }
 
