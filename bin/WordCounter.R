@@ -65,8 +65,7 @@ subsetbycity <- function(thecity) {
   terms<-head(d, 20)
   
   #write output to file
-  fileConn = file(paste("/wordCounts_",thecity,".csv",sep=""))
-  write_delim(terms, paste(args[1],fileConn,sep=""), delim = ",")
+  write.csv(terms, paste(args[1],"wordCounts_",thecity,".csv",sep=""))
 }
 subsetbycity("Boston")
 subsetbycity("Durham")
