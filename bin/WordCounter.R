@@ -1,3 +1,5 @@
+library(tidyverse)
+library(stringr)
 library(tm)
 
 files <- dir("data", pattern = "\\.txt$", full.names = TRUE)
