@@ -62,6 +62,7 @@ collabCountsTib <- collabCountsTib %>%
   top_n(10)
 
 #write output to file
-wd <- getwd()
-write.csv(collabCountsTib,paste(wd,"/collabCounts.csv"))
+fileConn = file("collabCounts.csv")
+write(collabCountsTib, fileConn)
+close(fileConn)
 
