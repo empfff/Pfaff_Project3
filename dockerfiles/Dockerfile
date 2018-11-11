@@ -1,7 +1,8 @@
 FROM rocker/tidyverse
 
-RUN apt-get update && \ 
-    apt-get install -y libfftw3-dev libtiff5-dev
+RUN apt-get update
 
-RUN Rscript -e 'install.packages("BiocManager")' 
-RUN Rscript -e 'BiocManager::install("EBImage")'
+RUN Rscript -e 'install.packages("tm")' 
+RUN Rscript -e 'install.packages("plyr")' 
+RUN Rscript -e 'install.packages("stringr")' 
+RUN Rscript -e 'install.packages("shiny")' 
