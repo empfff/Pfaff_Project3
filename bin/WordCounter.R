@@ -2,7 +2,8 @@ library(tidyverse)
 library(stringr)
 library(tm)
 
-files <- dir("data", pattern = "\\.txt$", full.names = TRUE)
+args = commandArgs(trailingOnly = TRUE)
+files <- dir(args[1], pattern = "\\.txt$", full.names = TRUE)
 
 #write a function to subset the abstracts to just those that mention one of the collaborating cities, one city at a time
 subsetbycity <- function(thecity) {
