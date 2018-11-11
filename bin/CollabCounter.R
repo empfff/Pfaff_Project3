@@ -4,7 +4,8 @@ library(plyr)
 library(dplyr)
 
 #read in the concat abstract file
-abstracts <- read_lines("data/all/allAbstracts.txt")
+args = commandArgs(trailingOnly = TRUE)
+abstracts <- read_lines(args[1])
 
 #subset the abstracts to just those that specifically mention UNC in Author information (not all do)
 uncAbstracts <- str_subset(abstracts, "Author information.{0,10000}Chapel Hill")
