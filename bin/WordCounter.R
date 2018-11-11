@@ -66,3 +66,12 @@ subsetbycity <- function(thecity) {
   write.csv(terms,mypath)
 }
 subsetbycity("Boston")
+subsetbycity("Durham")
+subsetbycity("New York")
+subsetbycity("Houston")
+subsetbycity("Seattle")
+subsetbycity("Chicago")
+subsetbycity("Los Angeles")
+subsetbycity("Philadelphia")
+subsetbycity("Bethesda")
+subsetbycity("Rochester")
