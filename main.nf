@@ -1,14 +1,16 @@
 #! /usr/bin/env nextflow
 
-allAbsChannel = Channel.fromPath( 'data/all/allAbstracts.txt' )
+params.in_files = 'data/all/allAbstracts.txt'
+
+in_abstracts = Channel.fromPath( params.in_files )
 
 process count_collabs {
     container 'empfff/abstractanalysis'
 
     input:
-    file i from allAbsChannel
+    file i from in_abstracts
 
-    script
+    script:
     """
     Rscript $baseDir/bin/CollabCounter.R
     """
