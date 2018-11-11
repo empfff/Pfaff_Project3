@@ -28,5 +28,14 @@ process count_words {
     """
 }
 
+process run_dashboard {
+    container 'empfff/abstractanalysis'
+
+    script:
+    """
+    Rscript $baseDir/bin/RunDash.R $baseDir/bin/ 
+    """
+}
+
 csv_out.subscribe { it.copyTo(myDir) }
 
