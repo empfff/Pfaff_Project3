@@ -1,3 +1,5 @@
+#REMOVE THIS AFTER DOCKER CONTAINER IS BUILT
+install.packages("tm")
 library(tm)
 
 files <- dir("data", pattern = "\\.txt$", full.names = TRUE)
