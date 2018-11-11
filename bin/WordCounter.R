@@ -1,5 +1,5 @@
 #REMOVE THIS AFTER DOCKER CONTAINER IS BUILT
-install.packages("tm")
+install.packages("tm",repos = "http://cran.us.r-project.org")
 library(tm)
 
 files <- dir("data", pattern = "\\.txt$", full.names = TRUE)
