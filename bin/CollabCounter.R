@@ -64,5 +64,4 @@ collabCountsTib <- collabCountsTib %>%
 #write output to file
 fileConn = file("collabCounts.csv")
 write_delim(collabCountsTib, fileConn, delim = ",")
-close(fileConn)
 
