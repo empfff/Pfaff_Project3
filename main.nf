@@ -29,11 +29,11 @@ process count_words {
 }
 
 process run_dashboard {
-    container 'empfff/abstractanalysis'
 
     script:
     """
-    Rscript $baseDir/bin/RunDash.R $baseDir/bin/ 
+    docker run -d -p 3838:3838 -p 8787:8787 -e ADD=shiny -e PASSWORD=1234 empfff/abstractanalysis
+    docker exec Rscript bin/RunDash.R $baseDir/bin/ 
     """
 }
 
