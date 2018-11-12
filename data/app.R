@@ -57,7 +57,7 @@ server <- function(input, output) {
   })
   
   # Return the dataset for the table ----
-  datasetInput2 <- read.csv("collabCounts.csv",col.names = c("blah","Collaborator","Abstracts"))
+  datasetInput2 <- read.csv("collabCounts.csv",col.names = c("Collaborator","Abstracts"))
   
   # Show the first "n" observations ----
   output$view <- renderTable({
