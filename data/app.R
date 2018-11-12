@@ -1,4 +1,5 @@
 library(shiny)
+library(tidyverse)
 
 # Define UI for dataset viewer app ----
 ui <- fluidPage(
