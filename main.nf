@@ -33,7 +33,7 @@ process run_dashboard {
     script:
     """
     docker run -d -p 3838:3838 -p 8787:8787 -e ADD=shiny -e PASSWORD=1234 empfff/abstractanalysis
-    docker exec Rscript bin/RunDash.R $baseDir/bin/ 
+    docker exec empfff/abstractanalysis Rscript bin/RunDash.R $baseDir/bin/ 
     """
 }
 
