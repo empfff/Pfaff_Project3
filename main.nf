@@ -32,7 +32,7 @@ process run_dashboard {
 
     script:
     """
-    docker run -d -p 3838:3838 -p 8787:8787 -e ADD=shiny -e PASSWORD=1234 -v $baseDir/bin/dashboard:/srv/shiny-server empfff/abstractanalysis
+    docker run -d -p 3838:3838 -p 8787:8787 -e ADD=shiny -e PASSWORD=1234 -v $baseDir/data:/srv/shiny-server empfff/abstractanalysis
     """
 }
 
