@@ -42,21 +42,21 @@ server <- function(input, output) {
   # Return the dataset for the plot ----
   datasetInput <- reactive({
     switch(input$dataset,
-           "Boston" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_Boston.csv"),
-           "Durham" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_Durham.csv"),
-           "New York" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Houston" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Seattle" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Chicago" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Los Angeles" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Philadelphia" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Bethesda" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv"),
-           "Rochester" = read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/wordCounts_New York.csv")
+           "Boston" = read.csv("wordCounts_Boston.csv"),
+           "Durham" = read.csv("wordCounts_Durham.csv"),
+           "New York" = read.csv("wordCounts_New York.csv"),
+           "Houston" = read.csv("wordCounts_New York.csv"),
+           "Seattle" = read.csv("wordCounts_New York.csv"),
+           "Chicago" = read.csv("wordCounts_New York.csv"),
+           "Los Angeles" = read.csv("wordCounts_New York.csv"),
+           "Philadelphia" = read.csv("wordCounts_New York.csv"),
+           "Bethesda" = read.csv("wordCounts_New York.csv"),
+           "Rochester" = read.csv("wordCounts_New York.csv")
            )
   })
   
   # Return the dataset for the table ----
-  datasetInput2 <- read.csv("C:/Users/epfaff/Documents/GitHub/Pfaff_Project3/collabCounts.csv",colClasses=c("NULL",NA,NA),col.names = c("blah","Collaborator","Abstracts"))
+  datasetInput2 <- read.csv("collabCounts.csv",colClasses=c("NULL",NA,NA),col.names = c("blah","Collaborator","Abstracts"))
   
   # Show the first "n" observations ----
   output$view <- renderTable({

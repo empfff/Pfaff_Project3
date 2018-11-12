@@ -1,6 +1,6 @@
 #! /usr/bin/env nextflow
 
-params.folder = "$baseDir/data"
+params.folder = "$baseDir/bin/dashboard"
 myDir = file(params.folder)
 in_abstracts = Channel.fromPath( 'data/all/allAbstracts.txt' )
 
@@ -24,7 +24,7 @@ process count_words {
 
     script:
     """
-    Rscript $baseDir/bin/WordCounter.R $baseDir/data/
+    Rscript $baseDir/bin/WordCounter.R $baseDir/bin/dashboard/
     """
 }
 
