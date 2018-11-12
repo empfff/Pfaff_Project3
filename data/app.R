@@ -46,18 +46,18 @@ server <- function(input, output) {
            "Boston" = read.csv("wordCounts_Boston.csv"),
            "Durham" = read.csv("wordCounts_Durham.csv"),
            "New York" = read.csv("wordCounts_New York.csv"),
-           "Houston" = read.csv("wordCounts_New York.csv"),
-           "Seattle" = read.csv("wordCounts_New York.csv"),
-           "Chicago" = read.csv("wordCounts_New York.csv"),
-           "Los Angeles" = read.csv("wordCounts_New York.csv"),
-           "Philadelphia" = read.csv("wordCounts_New York.csv"),
-           "Bethesda" = read.csv("wordCounts_New York.csv"),
-           "Rochester" = read.csv("wordCounts_New York.csv")
+           "Houston" = read.csv("wordCounts_Houston.csv"),
+           "Seattle" = read.csv("wordCounts_Seattle.csv"),
+           "Chicago" = read.csv("wordCounts_Chicago.csv"),
+           "Los Angeles" = read.csv("wordCounts_Los Angeles.csv"),
+           "Philadelphia" = read.csv("wordCounts_Philadelphia.csv"),
+           "Bethesda" = read.csv("wordCounts_Bethesda.csv"),
+           "Rochester" = read.csv("wordCounts_Rochester.csv")
            )
   })
   
   # Return the dataset for the table ----
-  datasetInput2 <- read.csv("collabCounts.csv",colClasses=c("NULL",NA,NA),col.names = c("blah","Collaborator","Abstracts"))
+  datasetInput2 <- read.csv("collabCounts.csv",col.names = c("blah","Collaborator","Abstracts"))
   
   # Show the first "n" observations ----
   output$view <- renderTable({
