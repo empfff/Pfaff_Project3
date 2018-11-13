@@ -1,6 +1,6 @@
 #! /usr/bin/env nextflow
 
-params.folder = "$baseDir/data"
+params.folder = "$baseDir"
 myDir = file(params.folder)
 in_abstracts = Channel.fromPath( 'data/all/allAbstracts.txt' )
 
@@ -24,15 +24,7 @@ process count_words {
 
     script:
     """
-    Rscript $baseDir/bin/WordCounter.R $baseDir/data/
-    """
-}
-
-process run_dashboard {
-
-    script:
-    """
-    docker run -d -p 3838:3838 -p 8787:8787 -e ADD=shiny -e PASSWORD=1234 -v $baseDir/data:/srv/shiny-server empfff/abstractanalysis
+    Rscript $baseDir/bin/WordCounter.R $baseDir
     """
 }
 
